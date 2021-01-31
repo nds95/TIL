@@ -27,15 +27,15 @@ public class ShapePrinter {
 				String h_String = Integer.toString(h_Result);
 				String a_String = Integer.toString(a);
 				for (int i = 1; i <= height; i++) {
-						String blank = "";
-						for (int j = a; a_String.length() <= h_String.length(); j++) {
-								blank += " ";
-						}
 						while (a <= b) {
+								String blank = "";
+								for (int j = h_String.length(); j > a_String.length(); j--) {
+										blank += " ";
+								}
 								if (a == b) {
-										System.out.println(blank + a);
+										System.out.println(blank + a + " ");
 								} else {
-										System.out.print(blank + a);
+										System.out.print(blank + a + " ");
 								}
 								a += 1;
 						}

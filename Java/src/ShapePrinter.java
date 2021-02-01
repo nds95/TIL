@@ -21,25 +21,24 @@ public class ShapePrinter {
 		}
 
 		public void printFloydsPyramid(int height) {
-				int a = 1;
-				int b = 1;
-				int h_Result = height * (height + 1) / 2;
-				String h_String = Integer.toString(h_Result);
-				String a_String = Integer.toString(a);
-				for (int i = 1; i <= height; i++) {
-						while (a <= b) {
-								String blank = "";
-								for (int j = h_String.length(); j > a_String.length(); j--) {
-										blank += " ";
+				int length = String.valueOf(height * (height + 1) / 2).length();
+				int number = 1;
+				
+				//반복분 1 - 행을 바꾸는 반복문
+				for (int row = 1; row <= height; row++) {
+						//한 행에서 인쇄될 내용을 담는 문자열
+						String line = "";
+						//반복문 2 - 열을 바꾸는 반복문
+						for(int col = 1; col <= row; col++) {
+								//반복문 3 - 한 열 안에서 자리수를 맞추는 반복문
+								for (int i = String.valueOf(number).length(); i < length; i++) {
+										line += " ";
 								}
-								if (a == b) {
-										System.out.println(blank + a + " ");
-								} else {
-										System.out.print(blank + a + " ");
-								}
-								a += 1;
-						}
-				b += (i + 1);
+								
+								line += (number + " ");
+								number += 1;
+						}		
+						System.out.println(line);		
 				}
 		}
 }

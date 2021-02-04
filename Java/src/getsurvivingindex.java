@@ -10,22 +10,29 @@ public class getsurvivingindex {
 						peopleList.add(i);
 				}
 
+				int listSize = peopleList.size(); //20
+
 				// 죽는 순서 출력
-				int count = k;
-				int break_count = 0;
-				while (break_count == 0) {
-						if (peopleList.size() == 1) {
-								break_count += 1;
+				int count = 0;
+				for (int i = 1; i <= n; i++) {
+						for (int j = 1; j <= k; j++) {
+								if (listSize == count) {
+										count -= count;
+								}
+								count += 1;
+								if (peopleList.get(count - 1) != 0) {
+										continue;
+								} else {
+										j -= 1;
+								}
+						}
+						if (i == n) {
+								break;
 						} else {
-								System.out.println(count + "번 군사가 죽습니다.");
-								peopleList.remove(count);
-								count += k;
-								if (count > peopleList.size()) {
-										count -= peopleList.size();
-								} 
+								System.out.println(count + "번 군사가 죽었습니다.");
+								peopleList.set(count - 1, 0);
 						}
 				}
-
 				return count;
 		}
 

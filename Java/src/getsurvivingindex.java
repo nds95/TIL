@@ -37,6 +37,6 @@ public class getsurvivingindex {
 		}
 
 		public static void main(String[] args) {
-				System.out.println("김신은 " + getSurvivingIndex(20, 5) + "번 자리에 서있으면 됩니다.");
+				System.out.println("김신은 " + getSurvivingIndex(109, 7) + "번 자리에 서있으면 됩니다.");
 		}
 }

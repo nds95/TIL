@@ -36,52 +36,43 @@ public class Theater {
 				if (s.isOccupied()) {
 					System.out.print("[0]");
 				} else {
-					System.out.print("[ }");
+					System.out.print("{ }");
 				}
 			}
 			System.out.println();
 		}
 	}
 	
-	for (int i = 0; i < col; i++) {
-		if (seats[getRowIndex(rowChar)][col + i] == null) {
-			return false;
-		} else {
-			continue;
-		}
-	
 	public boolean reserve(String name, char rowChar, int col, int numSeat) {
 		//true or false 카운트 값 정의;
 		int bool_Count = 0;
 		
 		//예약이 불가능한 상황
-		if (bool_Count = 0) {
+		if (bool_Count == 0) {
 			//존재하지 않는 좌석을 입력할 시;
 			if (seats.length < getRowIndex(rowChar) || seats[0].length < col) {
-				continue;
+				return false;
+			} else if ((col - 1) + numSeat > seats[0].length) {
+				return false;
 			}
-			//예약하고 싶은 좌석 수가 존재하는 좌석을 초과할 시;
-			if (col + numSeat > seats[0].length) {
-				continue;
-			}
+
 			//예약요청석에 이미 예약이 돼있을 시;
 			for (int i = 0; i < numSeat; i++) {
-				if (seats[getRowIndex(rowChar)][col + i] == null) {
-					continue;
+				if (seats[getRowIndex(rowChar)][(col - 1) + i].isOccupied()) {
+					return false;
 				} else {
 					bool_Count += 1;
-					break;
 				}
 			}
 		}
 		//예약이 가능한 상황;
-		if (bool_Count = 1) {
-			for (int i = 0; i < col; i++) {
-				seats[getRowIndex(rowChar)][numSeat + i].name = name;
+		if (bool_Count >= 1) {
+			for (int i = 0; i < numSeat; i++) {
+				seats[getRowIndex(rowChar)][(col - 1) + i].reserve(name);
 			}
 		}
 
-		if (bool_Count = 0) {
+		if (bool_Count == 0) {
 			return false;
 		} else {
 			return true;
@@ -89,15 +80,48 @@ public class Theater {
 	}
 
 	public int cancel(String name) {
-		cancel_Count = 0;
+		int cancel_Count = 0;
 
 		for (int i = 0; i < seats.length; i++) {
 			for (int j = 0; j < seats[i].length; j++) {
-				if (seats[i][j].name == name) {
-					seats[i][j].name
+				if (seats[i][j].getName() == name) {
+					seats[i][j].cancel();
+					cancel_Count += 1;
+				}
+			}
+		}
+
+		return cancel_Count;
+	}
+	
+	public int cancel(char rowChar, int col, int numSeat) {
+		int cancel_Count = 0;
+		
+		for (int i = 0; i < numSeat; i++) {
+			if (seats[getRowIndex(rowChar)][(col - 1) + i].isOccupied()) {
+				seats[getRowIndex(rowChar)][(col - 1) + i].cancel();
+				cancel_Count += 1;
+			}
+		}
+
+		return cancel_Count;
+	}
 
 	private int getRowIndex(char uppercaseChar) {
 		return uppercaseChar - 'A';
 	}
-}
 
+	public int getNumberOfReservedSeat() {
+		int reserve_Count = 0;
+
+		for (int i = 0; i < rowCount; i++) {
+			for (int j = 0; j < colCount; j++) {
+				if (seats[i][j].isOccupied()) {
+					reserve_Count += 1;
+				}
+			}
+		}
+
+		return reserve_Count;
+	}
+}

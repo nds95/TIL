@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 public class Seat {
 	private String name;
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void reserve(String name) {
@@ -17,18 +15,10 @@ public class Seat {
 
 	//예약된 자리 확인 후 boolean return;
 	public boolean isOccupied() {
-		if (name == null) {
-			return false;
-		} else {
-			return true;
-		}
+		return name != null;
 	}
 
 	public boolean match(String checkName) {
-		if (checkName == name) {
-			return false;
-		} else {
-			return true;
-		}
+		return name.equals(checkName);
 	}
 }

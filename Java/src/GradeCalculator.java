@@ -28,5 +28,11 @@ public class GradeCalculator {
 		}
 
 		System.out.println("이번 학기 성적: " + (scoreSum / creditSum) + " (총 " + creditSum + "학점)");
+
+		int totalCredit = currentCredit + creditSum;
+		double totalScore = ((currentScore * currentCredit) + scoreSum);
+
+		System.out.println("전체 예상 성적: " + (totalScore / totalCredit) + " (총 " + totalCredit + "학점)");
+
 	}
 }

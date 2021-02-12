@@ -26,13 +26,17 @@ public class GradeCalculator {
 			scoreSum += c.getScore() * c.credit;
 			creditSum += c.credit;
 		}
+		double scoreSum1 = Double.parseDouble(String.format("% .10f", scoreSum / creditSum));
 
-		System.out.println("이번 학기 성적: " + (scoreSum / creditSum) + " (총 " + creditSum + "학점)");
+
+		System.out.println("이번 학기 성적: " + scoreSum1 + " (총 " + creditSum + "학점)");
 
 		int totalCredit = currentCredit + creditSum;
 		double totalScore = ((currentScore * currentCredit) + scoreSum);
+		double totalScore1 = Double.parseDouble(String.format("% .10f", totalScore / totalCredit));
 
-		System.out.println("전체 예상 성적: " + (totalScore / totalCredit) + " (총 " + totalCredit + "학점)");
+
+		System.out.println("전체 예상 성적: " + totalScore1 + " (총 " + totalCredit + "학점)");
 
 	}
 }

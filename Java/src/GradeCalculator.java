@@ -36,7 +36,7 @@ public class GradeCalculator {
 		double totalScore1 = Double.parseDouble(String.format("% .10f", totalScore / totalCredit));
 
 
-		System.out.println("전체 예상 성적: " + totalScore1 + " (총 " + totalCredit + "학점)");
+		System.out.println("전체 예상 학점: " + totalScore1 + " (총 " + totalCredit + "학점)");
 
 	}
 }

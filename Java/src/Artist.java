@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Artist {
-	public static String name;
+	public final String name;
 
 	private final ArrayList<Album> albums = new ArrayList<> ();
 
-	public void Artist(String name) {
+	public Artist(String name) {
 		this.name = name;
 	}
 

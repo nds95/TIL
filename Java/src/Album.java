@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class Album {
-	public static String albumTitle;
-	public static int year;
-	public static String artist;
+	public final String albumTitle;
+	public final int year;
+	public final Artist artist;
 
 	private final ArrayList<Song> songs = new ArrayList<> ();
 
-	public void Album(String albumTitle, int year, String artist) {
+	public Album(String albumTitle, int year, Artist artist) {
 		this.albumTitle = albumTitle;
 		this.year = year;
 		this.artist = artist;
@@ -18,6 +18,6 @@ public class Album {
 	}
 	
 	public Song getTrack(int i) {
-		return songs.get(i);
+		return songs.get(i - 1);
 	}
 }

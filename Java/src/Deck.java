@@ -1,32 +1,35 @@
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Collections;
 
-public class Deck {
-	protected ArrayList<Card> cards = new ArrayList<> ();
+public class Deck<T extends Card> {
+	protected ArrayList<T> cards;
 
-	Random rand = new Random();
-	
-	public ArrayList<Card> getCards() {
+	public Deck() {
+		cards = new ArrayList<T> ();
+	}
+
+	public ArrayList<T> getCards() {
 		return cards;
 	}
 
-	public void addCard(Card card) {
+	public void addCard(T card) {
 		cards.add(card);
 	}
 	
 	public void print() {
-		for (Card card : cards) {
+		for (T card : cards) {
 			System.out.println(card.toString());
 		}
 	}
 
 	public void shuffle() {
-		int numberOfCard = 52;
-		for (int i = 0; i < numberOfCard; i++) {
-			int randNumber = rand.nextInt(numberOfCard) + 1;
+		Random rand = new Random();
 
-			Collections.swap(cards, i, randNumber - 1);
+		for (int i = 0; i < cards.size(); i++) {
+			int randNumber = rand.nextInt(cards.size());
+			T temp = cards.get(i);
+			cards.set(i, cards.get(randNumber));
+			cards.set(randNumber, temp);
 		}
 	}
 

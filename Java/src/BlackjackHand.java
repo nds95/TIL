@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class BlackjackHand extends Deck {
+public class BlackjackHand extends Deck<BlackjackCard> {
 	public int getValue() {
 		int a = 0;
 		
-		for (Card card : getCards()) {
-			a += ((BlackjackCard) card).getValue();
+		for (BlackjackCard card : getCards()) {
+			a += card.getValue();
 		}
-		for (Card card : getCards()) {
-			if (((BlackjackCard) card).isAce() && a > 21) {
+		for (BlackjackCard card : getCards()) {
+			if (card.isAce() && a > 21) {
 				a -= 10;
 			}
 		}

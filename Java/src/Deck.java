@@ -35,14 +35,9 @@ public class Deck<T extends Card> {
 
 	public Deck deal(int count) {
 		Deck hand = new Deck();
-		int cards_length = cards.size();
 
-		for (int i = cards_length - 1; i >= (cards_length - count); i--) {
-			hand.addCard(cards.get(i));
-		}
-
-		for (int i = 1; i <= count; i++) {
-			cards.remove(cards.size() - 1);
+		for (int i = 0; i < count; i++) {
+			hand.addCard(cards.remove(0));
 		}
 
 		return hand;

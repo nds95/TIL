@@ -17,7 +17,8 @@ public class Square extends AbstractShape implements Printable {
 	public double getPerimeter() {
 		return 4 * side;
 	}
-
+	
+	//interface method 구현
 	@Override
 	public void print() {
 		for (int i = 0; i < side; i++) {

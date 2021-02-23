@@ -20,6 +20,7 @@ public class Rectangle extends AbstractShape implements Printable{
 		return 2 * (side1 + side2);
 	}
 	
+	//interface method 구현
 	@Override
 	public void print() {
 		for (int i = 0; i < side1; i++) {

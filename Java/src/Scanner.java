@@ -9,7 +9,7 @@ public class Main_5 {
 						Scanner scanner = new Scanner(System.in);
 						String ans = scanner.next();
 
-						swich (ans) {
+						switch (ans) {
 								case E:
 								case e:
 										System.out.println("안녕히 가세요.");
@@ -24,7 +24,7 @@ public class Main_5 {
 										Scanner scanner = new Scanner(System.in);
 										String ans1 = scanner.next();
 
-										swich (ans1) {
+										switch (ans1) {
 												case P:
 												case p:
 														System.out.println("Python 언어를 통해 컴퓨터 사이언스의 기초를 배웁니다.");

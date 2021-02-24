@@ -1,4 +1,4 @@
-public class Card {
+public class Card implements Comparable<Card> {
 	public final int suitNumber;
 	public final int rankNumber;
 	
@@ -12,9 +12,9 @@ public class Card {
 			case 1 :
 				return "Clubs";
 			case 2 :
-				return "Hearts";
-			case 3 :
 				return "Diamonds";
+			case 3 :
+				return "Hearts";
 			case 4 :
 				return "Spades";
 			default :
@@ -57,6 +57,16 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return getSuit() + " of " + getRank();
+		return getRank() + " of " + getSuit();
+	}
+
+	@Override
+	public int compareTo(Card o) {
+		int sortResult = suitNumber - o.suitNumber;
+
+		if (suitNumber == o.suitNumber) {
+			sortResult = rankNumber - o.rankNumber;
+		}
+		return sortResult;
 	}
 }

@@ -66,3 +66,30 @@ git reflog
 <br><br>
 ***
 <br>
+
+```
+git config alias.{A} '{B}'
+```
+* B 명령어를 A로 지정(엘리어싱)
+<br>
+  ##### GIT에서만 적용됨.
+<br><br>
+***
+<br>
+
+```
+git rebase {branch}
+```
+* 현재 branch의 베이스를 A branch로 재지정
+  ##### conflict 발생 시 해당 파일 수정 후 
+  <br>
+
+  ```
+  git rabase --continue
+  ```
+  ##### 위 명령어를 실행
+  ##### merge를 실행하면 A와 B를 합친 새로운 커밋이 생성되지만,<br> rebase를 하면 A에 B를 합쳐 기존 커밋에 추가한다. (새로운 커밋이 생기지 않음)
+  
+<br><br>
+***
+<br>

@@ -91,7 +91,6 @@ DATE_SUB(column, INTERVAL 300 DAY);
 WHERE column LIKE BINARY '%g%';
 ```
 * BINARY를 사용하면 대소문자를 구분하여 어떤 문자열 사이에 소문자 'g'가 있는 문자열만 추출
-<br>
   ##### BINARY는 해당 문자열이 컴퓨터에서 인식하는 '0'과 '1'이 정확히 일치하는 것을 찾으라는 의미
 <br><br>
 
@@ -225,7 +224,7 @@ SELECT COALESCE(column1, column2, 'N/A') FROM table_name;
 SELECT column AS name;
 ```
 * column 이름을 name으로 변경하여 보여줌
-  ##### column이름 뒤에 space를 하고 Alias 이름을 적어도 되지만 가독성을 위해 'AS'를 붙이는 것을 권장
+  ##### column이름 뒤에 space를 하고 Alias 이름을 적어도 되지만 가독성을 위해 'AS'를 붙이는 것을 권장<br> * 띄어쓰기가 포함 된 Alias를 할 때 작은따옴표나 큰 따옴표를 붙여 Alias 부분을 확실하게 표현해주어야 함
 <br><br>
 
 ### column을 합치고 단위 등을 붙이기
@@ -251,4 +250,142 @@ CASE
 END
 ```
 * column의 조건에따라 result를 확인. 보면 다른 언어의 if문과 비슷한 구조임.
+<br><br>
+***
+
+### 고유값 추출하기
 <br>
+
+```
+SELECT DISTINCT(column) FROM table_name;
+```
+* 해당 column에서 고유한 값들을 출력
+  ##### 만약, 성별을 나타내는 column이라면 Male, Female값이 나옴
+<br>
+
+```
+SELECT DISTINCT(SUBSTRING(column, 1, 2)) FROM table_name;
+```
+* SUBSTRING을 위와 같이 사용하면 column의 첫번째, 두번째 TEXT를 가져온다.
+  ##### 그리고 위 코드는 DISTINCT로 SUBSTRING을 덮어주어 고유값만 가져오는 것이다.
+<br>
+
+***
+
+### 공백 지우기
+<br>
+
+```
+SELECT TRIM(column) FROM table_name;
+```
+* column 값의 양쪽 공백을 지워줌
+  ##### LTRIM을 사용하면 왼쪽 공백을, RTRIM을 사용하면 오른쪽 공백을 지워준다.
+<br>
+***
+
+### 그루핑(GROUP) 하기
+<br>
+
+```
+SELECT * FROM table_name GROUP BY column;
+```
+* column을 그루핑 하여 중복되는 값을 합쳐줌
+  ##### 그루핑을 하면 SELECT문에는 그루핑 한 column들만 사용할 수 있고 <br> COUNT, MAX 등 집계함수만 사용이 가능하다.
+
+```
+SELECT COUNT(*) FROM table_name GROUP BY column;
+```
+* 위와 같이 실행하면 해당 column의 그루핑 된 row의 갯수를 알려줌
+<br>
+
+***
+
+### GROUP BY 된 값에 조건 걸기
+<br>
+
+```
+GROUP BY column
+HAVING column = '의정부'
+```
+* column의 값이 의정부인 row만 조회함.
+<br><br>
+
+### 부분 총계값 구하기
+<br>
+
+```
+GROUP BY column1, column2
+WITH ROLLUP
+```
+* column1과 2중에 먼저 그루핑을 한 상위 column인 column1을 기준으로 총계 값을 출력
+<br>
+
+***
+<br>
+
+### 결합 연산 사용하기
+<br>
+
+```
+FROM table1 LEFT OUTER JOIN table2
+ON column1 = table2.column2
+```
+* 왼쪽 테이블 인 table1을 기준으로 table2가 합쳐지며, column1을 table.column2에 합치라는 명령.
+
+```
+FROM table1 AS a LEFT OUTER JOIN table2 AS b
+USING(id)
+```
+* column의 이름이 같다면 USING을 사용하여 JOIN의 조건을 표현할 수 있음.
+<br>
+
+### Table간 교집합 합치기
+<br>
+
+```
+FROM table1 INNER JOIN table2;
+```
+* 좌우에 기준이 되는 테이블 없이 테이블을 합쳐줌
+<br>
+
+> JOIN은 가로 방향을 합치는 결합 연산에 해당된다.
+<br>
+
+### 집합 연산 사용하기
+<br>
+
+```
+SELECT * FROM table1
+INTERSECT
+SELECT * FROM table2
+```
+* table1, 2의 교집합에 해당되는(column이 똑같으며 내용도 일치하는) row 합치기
+<br>
+
+```
+SELECT * FROM table1
+MINUS
+SELECT * FROM table2
+```
+* table1에서 table2를 뺀 차집합에 해당되는 row 합치기
+  ##### 반대로 table2에서 table1을 빼려면 순서만 바꿔주면 된다.
+<br>
+
+```
+SELECT * FROM table1
+UNION
+SELECT * FROM table2
+```
+* table1, 2의 합집합(모든 row)를 합치기
+  ##### UNION을 사용하면 두 table이 공통적으로 갖고있는 원소(교집합에 속하는 원소들)는 중복을 제거하고 하나만 표시됨.<br> 중복되는 원소들도 모두 표시하려면 UNION ALL을 사용하면 됨
+<br>
+***
+
+### 서브쿼리(Sub query) 사용하기
+<br>
+
+```
+(SELECT column FROM table)
+```
+* 위와 같이 SQL문을 괄호로 감싸주면 됨.
+  ##### 서브쿼리를 사용했을 때 해당 서브쿼리의 값을 활용할 수 있음

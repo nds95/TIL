@@ -281,6 +281,7 @@ SELECT TRIM(column) FROM table_name;
 * column 값의 양쪽 공백을 지워줌
   ##### LTRIM을 사용하면 왼쪽 공백을, RTRIM을 사용하면 오른쪽 공백을 지워준다.
 <br>
+
 ***
 
 ### 그루핑(GROUP) 하기
@@ -389,3 +390,34 @@ SELECT * FROM table2
 ```
 * 위와 같이 SQL문을 괄호로 감싸주면 됨.
   ##### 서브쿼리를 사용했을 때 해당 서브쿼리의 값을 활용할 수 있음
+<br>
+
+### 서브쿼리를 활용하여 id값 구하기
+<br>
+
+```
+SELECT * FROM item
+WHERE id IN
+(
+SELECT item_id
+FROM review
+GROUP BY item_id HAVING COUNT(*) >= 3
+);
+```
+![image](./image/1.png)
+<br>
+* 서브쿼리의 결과는 위와같고, 해당 서브쿼리의 값을 IN으로 가져온다.
+<br>
+
+***
+
+### VIEW 저장하기
+<br>
+
+```
+CREATE VIEW name AS
+SELECT ~~
+FROM ~~;
+```
+* AS 뒤의 SQL함수를 name으로 저장하여 다른 쿼리창에서 쓸 수 있음.
+<br>

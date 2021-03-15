@@ -421,3 +421,89 @@ FROM ~~;
 ```
 * AS 뒤의 SQL함수를 name으로 저장하여 다른 쿼리창에서 쓸 수 있음.
 <br>
+
+### 테이블 생성하기
+<br>
+
+```
+CREATE TABLE `name`;
+```
+* name의 이름으로 table이 생성된다.
+  ##### 내가 설정한 이름에는 무조건 `(백틱)을 쓰도록 한다.
+<br>
+
+### column 생성하기
+<br>
+
+```
+CREATE TABLE `name`(
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `n_name` TEXT NULL
+  ...
+)
+```
+* name이름으로 테이블을 만들고, 내부 설정을 해준다.
+<br>
+
+### row 입력하기
+<br>
+
+```
+INSERT INTO(column1, column2, ..) VALUES (A, B, ..)
+```
+* 위와 같이 입력하면 column1에 A가, column2에 B가 입력된다.
+<br>
+
+### row 갱신(수정)하기
+<br>
+
+```
+UPDATE table SET column = A WHERE id = 2;
+```
+* table의 column에서 id값이 2인 row를 A로 수정
+<br>
+
+### row 삭제하기
+<br>
+
+```
+DELETE FROM table WHERE id = 4;
+```
+* table의 id값이 4인 row를 삭제한다.
+<br>
+
+### table에 column 추가하기
+<br>
+
+```
+ALTER TABLE table ADD column_name INT NOT NULL;
+```
+* table에 column_name으로 된 column을 INT NOT NULL의 컬럼타입으로 추가한다.
+<br>
+
+### column 이름 변경하기
+<br>
+
+```
+ALTER TABLE table
+  RENAME COLUMN column1 TO column2;
+```
+* table에 있는 column1의 이름을 column2로 변경
+<br>
+
+### column 삭제하기
+<br>
+
+```
+ALTER TABLE table DROP COLUMN column1
+```
+* table에 있는 column1을 삭제
+<br>
+
+### column의 Type 변경
+<br>
+
+```
+ALTER TABLE table MODIFY column INT;
+```
+* table에 있는 column의 타입을 INT로 수정

@@ -507,3 +507,89 @@ ALTER TABLE table DROP COLUMN column1
 ALTER TABLE table MODIFY column INT;
 ```
 * table에 있는 column의 타입을 INT로 수정
+<br>
+
+### 제약조건 추가하기
+<br>
+
+```
+ALTER TABLE table ADD CONSTRAINT name CHECK (column < 100);
+```
+* table의 name 이름으로 제한사항을 추가
+<br>
+
+### 제약조건 삭제하기
+<br>
+
+```
+ALTER TABLE table DROP CONSTAINT name;
+```
+* table에서 name의 제약사항을 제거
+<br>
+
+### column 위치 가장 앞으로 옮기기
+<br>
+
+```
+ALTER TABLE table
+  MODIFY column .. FIRST;
+```
+* table에 있는 column의 위치를 가장 앞으로 옮김
+<br>
+
+### column간의 순서 바꾸기
+<br>
+
+```
+ALTER TABLE table
+  MODIFY column1 .. AFTER column2;
+```
+* column1이 column2 뒤로 위치함.
+<br>
+
+### column 속성 한번에 바꾸기
+<br>
+
+```
+ALTER TABLE table
+  CHANGE column name INT NOT NULL;
+```
+* column의 이름을 name으로 바꾸고 속성을 위와같이 바꿈
+<br>
+
+### TABLE 이름 변경하기
+<br>
+
+```
+RENAME TABLE name TO name2
+```
+* TABLE이름을 name에서 name2로 변경
+<br>
+
+### 테이블 복사본 만들기
+<br>
+
+```
+CREATE TABLE copy_of_name AS SELECT * FROM name;
+```
+* name TABLE을 복사하여 copy_of_name이라는 이름의 TABLE이라고 동일하게 만듬.
+<br>
+
+### TABLE의 구조(column)만 복사하여 동일한 TABLE 만들기
+<br>
+
+```
+CREATE TABLE name LIKE name1
+```
+* name1의 구조(column)만 복사하여 name이란 이름의 동일한 TABLE을 만듬
+<br>
+
+### TABLE의 모든 row 지우기
+<br>
+
+```
+TRUNCATE table;
+```
+* table의 모든 row를 지운다.
+<br>
+

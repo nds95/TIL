@@ -593,3 +593,15 @@ TRUNCATE table;
 * table의 모든 row를 지운다.
 <br>
 
+### FOREIGN KEY 만들기
+<br>
+
+```
+ALTER TABLE table
+ADD CONSTRAINT name
+  FOREIGN KEY (column)
+  REFERENCES table1 (column1)
+  ON DELETE RESTRICT
+  ON UPDATE RESTRICT
+```
+* table의 name이라는 제한사항을 넣고, FOREIGN KEY는 column으로 지정, 참조는 column1로 지정한다.

@@ -1,13 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser'); //post방식의 body를 분석할 수 있는 패키지
 const app = express();
 app.locals.pretty = true;
 app.set('views', './views');
 app.set('view engine', 'jade'); //template엔진 설정 - jade
+app.use(bodyParser.urlencoded({ extended: false }));
 const port = 3000;
 
 app.post('/form_receiver', (req, res) => {
-  var title = req.body.title;
-  var description = req.body.description;
+  
   res.send(title+', '+description);
 })
 

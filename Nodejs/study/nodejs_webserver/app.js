@@ -4,7 +4,7 @@ const app = express();
 app.locals.pretty = true;
 app.set('views', './views');
 app.set('view engine', 'jade'); //template엔진 설정 - jade
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false })); // bodyParser 실행코드.
 const port = 3000;
 
 app.post('/form_receiver', (req, res) => {

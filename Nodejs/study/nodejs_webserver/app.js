@@ -8,9 +8,10 @@ app.use(bodyParser.urlencoded({ extended: false })); // bodyParser 실행코드.
 const port = 3000;
 
 app.post('/form_receiver', (req, res) => {
-  
+  var title = req.body.title;
+  var description = req.body.description;
   res.send(title+', '+description);
-})
+});
 
 app.get('/form', (req, res) => {
   res.render('form');
@@ -38,7 +39,6 @@ app.get('/topic/:id', (req, res) => {
   <a href="/topic?id=0">Java</a><br>
   <a href="/topic?id=1">Nodejs</a><br>
   <a href="/topic?id=2">Express</a><br><br>
-
   ${topics[req.params.id]}
   `
   res.send(as);

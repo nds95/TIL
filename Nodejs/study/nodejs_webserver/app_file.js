@@ -9,37 +9,50 @@ app.set('views', './views_file');
 app.set('view engine', 'jade');
 
 app.get('/topic/new', (req, res) => {
-  res.render('new');
-})
-app.get('/topic', (req, res) => {
   fs.readdir('data', (err, files) => {
     if(err) {
       console.log(err);
       res.status(500).send('Internal Server Error');
-    } else { 
-    res.render('view', {topics:files});
     }
-  });
+    res.render('new', {topics:files});
+  })
 });
-app.get('/topic/:id', (req, res) => {
-  var id = req.params.id;
+app.get(['/topic', '/topic/:id'], (req, res) => {
   fs.readdir('data', (err, files) => {
     if(err) {
       console.log(err);
       res.status(500).send('Internal Server Error');
-    } else { 
-    res.render('view', {topics:files});
     }
-  });
-  fs.readFile('data/'+id, 'utf8', (err, data) => {
-    if(err) {
-      console.log(err);
-      res.status(500).send('Internal Server Error');
+    var id = req.params.id;
+    if(id){
+      fs.readFile('data/'+id, 'utf8', (err, data) => {
+        if(err) {
+          console.log(err);
+          res.status(500).send('Internal Server Error');
+        }
+        res.render('view', {topics:files, title:id, description:data});
+      });
     } else {
-      res.render('view', {title:id});
-    };
-  });
-};
+      res.render('view', {topics:files, title:'Welcome', description: 'Hello, JavaScript for Server'});
+    }
+  })
+});
+// app.get('/topic/:id', (req, res) => {
+//   var id = req.params.id;
+//   fs.readdir('data', (err, files) => {
+//     if(err) {
+//       console.log(err);
+//       res.status(500).send('Internal Server Error');
+//     }
+//     fs.readFile('data/'+id, 'utf8', (err, data) => {
+//       if(err) {
+//         console.log(err);
+//         res.status(500).send('Internal Server Error');
+//       }
+//       res.render('view', {topics:files, title:id, description:data});
+//     });
+//   });
+// });
 app.post('/topic', (req, res) => {
   var title = req.body.title;
   var description = req.body.description;
@@ -47,6 +60,7 @@ app.post('/topic', (req, res) => {
    if(err){
     res.status(500).send('Internal Server Error');
    } else {
+    res.redirect('/topic/'+title)
     res.send('Succress');
    }
   });

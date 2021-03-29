@@ -17,8 +17,9 @@ conn.connect();
 //   }
 // });
 
-var sql = 'UPDATE topic SET title=?, description=? WHERE id=?'
-var params = ['UDC', 'Uijeongbu Developer Community', 3];
+var sql = 'DELETE FROM topic WHERE id=?';
+var check = 'SELECT * FROM topic';
+var params = [6];
 conn.query(sql, params, (err, rows, fields) => {
   if (err) {
     console.log(err);

@@ -109,22 +109,22 @@ app.post('/topic', (req, res) => {
    }
   });
 });
-app.get('/topic/:id/del', (req, res) => {
-  var sql = 'SELETE id, title FROM topic';
-  var id = req.params.id;
-  conn.query(sql, (err, topics, fields) => {
-    var sql = 'SELETE * FROM topic WHERE id=?';
-    conn.query(sql, [id], (err, rows) {
-      if(err) {
-        console.log(err);
-        res.status(500).send('Internal Server Error');
-      } else {
+//app.get('/topic/:id/del', (req, res) => {
+  //var sql = 'SELETE id, title FROM topic';
+  //var id = req.params.id;
+  //conn.query(sql, (err, topics, fields) => {
+    //var sql = 'SELETE * FROM topic WHERE id=?';
+    //conn.query(sql, [id], (err, rows) {
+      //if(err) {
+        //console.log(err);
+        //res.status(500).send('Internal Server Error');
+      //} else {
 
-      }
-      res.render('delete', {topics:topics, });
-    });
-  });
-});
+      //}
+      //res.render('delete', {topics:topics});
+    //});
+  //});
+//});
 app.listen(3000, () => {
   console.log('Connectied, 3000 port!');
 });

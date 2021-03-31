@@ -109,22 +109,38 @@ app.post('/topic', (req, res) => {
    }
   });
 });
-//app.get('/topic/:id/del', (req, res) => {
-  //var sql = 'SELETE id, title FROM topic';
-  //var id = req.params.id;
-  //conn.query(sql, (err, topics, fields) => {
-    //var sql = 'SELETE * FROM topic WHERE id=?';
-    //conn.query(sql, [id], (err, rows) {
-      //if(err) {
-        //console.log(err);
-        //res.status(500).send('Internal Server Error');
-      //} else {
-
-      //}
-      //res.render('delete', {topics:topics});
-    //});
-  //});
-//});
+app.get('/topic/:id/del', (req, res) => {
+  var sql = 'SELECT id, title FROM topic';
+  var id = req.params.id;
+  conn.query(sql, (err, topics, fields) => {
+    var sql = 'SELECT * FROM topic WHERE id=?';
+    conn.query(sql, [id], (err, topic) => {
+      if(err) {
+        console.log(err);
+        res.status(500).send('Internal Server Error');
+      } else {
+        if(topic.length === 0) {
+          console.log('There is no record.');
+          res.status(500).send('Internal Server Error');
+        } else {
+          res.render('del', {topics:topics, topic:topic[0]});
+        }
+      }
+    });
+  });
+});
+app.post('/topic/:id/del', (req, res) => {
+  var sql = 'DELETE FROM topic WHERE id=?';
+  var id = req.params.id;
+  conn.query(sql, [id], (err, rows, fields) => {
+    if(err){
+      console.log(err);
+      res.status(500).send('Internal Server Error');
+     } else {
+      res.redirect('/topic');
+     }
+  });
+});
 app.listen(3000, () => {
   console.log('Connectied, 3000 port!');
 });

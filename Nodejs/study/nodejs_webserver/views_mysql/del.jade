@@ -10,10 +10,8 @@ html
         li
           a(href='/topic/'+topic.id)= topic.title
     artcle
-      form(action='/topic/add' method='post') 
+      h1= 'Delete? ' +topic.title
+      form(action='/topic/'+topic.id+'/del' method='post')
         p
-          input(type='text' name='title' placeholder='title')
-        p 
-          textarea(name='description' placeholder='description')
-        p
-          input(type='submit')
+          input(type='submit' value='YES')
+      a(href='/topic/'+topic.id) no

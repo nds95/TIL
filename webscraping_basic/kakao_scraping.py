@@ -5,6 +5,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 import csv
 import time
 #1. csv file open
+csv_name = 'main_today.csv'
+csv_open = open(csv_name, 'w+', encoding='utf8', newline='')
+csv_writer = csv.writer(csv_open)
+csv_writer.writerow(('profile_img', 'profile_name', 'upload_date', 'like_cnt', 'title', 'description', 'img_url'))
 
 #2. Driver & BeautifulSoup
 driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -17,6 +21,29 @@ full_html = driver.page_source
 soup = BeautifulSoup(full_html, 'html.parser')
 time.sleep(2)
 
-#4. Get element selecort (1)
-img = soup.find_all("article", attrs={"class":"feed__Wrap-uhovpf-0 lbNmLd"}).find("section")
-print(img)
+#4. Get element selector (1)
+articles = soup.select('#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article')
+for i in range(1, len(articles) + 1):
+  # 게시물 profile img url select(src)
+  profile_img = driver.find_element_by_css_selector(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child({i}) > section.header__Wrap-sc-1uyrtg9-0.iFrtWG > div.header__ImageWrap-sc-1uyrtg9-1.hcCvnI > img').get_attribute('src')
+  # 게시물 profile name select(text)
+  profile_name = driver.find_element_by_css_selector(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child({i}) > section.header__Wrap-sc-1uyrtg9-0.iFrtWG > div:nth-child(2) > p').text
+  # 게시물 profile status select(text)
+  upload_date = driver.find_element_by_css_selector(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child(1) > section.header__Wrap-sc-1uyrtg9-0.iFrtWG > div:nth-child(2) > div > span.header__Badge-sc-1uyrtg9-5.kta-dcg').text
+  # 게시물 like count select(text)
+  like_cnt = driver.find_element_by_css_selector(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child({i}) > section:nth-child(2) > div.contents__LikeCountWrap-sc-1b0iw5u-2.jvMMAF > span > span > span').text
+  # 게시물 title select(text)
+  title = driver.find_element_by_css_selector(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child({i}) > section:nth-child(2) > p').text
+  # 게시물 description select(text)
+  description = driver.find_element_by_css_selector(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child({i}) > section:nth-child(2) > div.contents__SubCopy-sc-1b0iw5u-6.fDsieo').text
+
+  # 게시물 별 img url select
+  imges = soup.select(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child({i}) > section:nth-child(2) > div.media-slider__Wrap-bw8abp-0.fYNEqL > div > div > div')
+  for j in range(1, len(imges)+1):
+    img = driver.find_element_by_css_selector(f'#mArticle > main > div.today__Wrap-sc-1gh0i9h-0.eBhdPx > article:nth-child({i}) > section:nth-child(2) > div.media-slider__Wrap-bw8abp-0.fYNEqL > div > div > div:nth-child({j}) > div > div > img').get_attribute('src')
+
+    #5. Create csv file
+    if i == 0:
+      csv_writer.writerow((profile_img, profile_name, upload_date, like_cnt, title, description, img))
+    else:
+      csv_writer.writerow((profile_img, profile_name, upload_date, like_cnt, title, description, img))

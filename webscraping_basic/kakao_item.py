@@ -35,11 +35,9 @@ for i in range(1, len(item_len)):
   full_html = driver.page_source
   soup = BeautifulSoup(full_html, 'html.parser')
   time.sleep(1)
-  imgLength = soup.select('#mArticle > div > div.swipe-images__Wrap-b1yvye-0.cPQuQo > div:nth-child(1) > div > div')
-  for j in range(1, len(imgLength)):
-    getImg = driver.find_element_by_css_selector(f'#mArticle > div > div.swipe-images__Wrap-b1yvye-0.cPQuQo > div:nth-child(1) > div > div:nth-child({j}) > span > img').get_attribute('src')
-    item_title = driver.find_element_by_css_selector('#mArticle > div > div.detail-header__Detail-sc-1h4z2tt-0.cFRAaP > h2').text
-
-    #csv file write
-    csv_writer.writerow((item_title, getImg))
+  title = driver.find_element_by_css_selector('#mArticle > div > div.detail-contents__Contents-sc-9j5kxa-0.bfPVUn > h3').text
+  description = soup.select('#mArticle > div > div.detail-contents__Contents-sc-9j5kxa-0.bfPVUn > div')
+  #for j in range(1, len(description) + 1):
+  fid = driver.find_element_by_css_selector('#mArticle > div > div.detail-contents__Contents-sc-9j5kxa-0.bfPVUn > div:nth-child(14)').get_attribute('class')
+  print(fid)
   driver.back()

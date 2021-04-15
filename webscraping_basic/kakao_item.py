@@ -39,4 +39,4 @@ for i in range(1, len(item_len)):
   description = soup.select('#mArticle > div > div.detail-contents__Contents-sc-9j5kxa-0.bfPVUn > div')
   #for j in range(1, len(description) + 1):
   fid = driver.find_element_by_css_selector('#mArticle > div > div.detail-contents__Contents-sc-9j5kxa-0.bfPVUn > div:nth-child(14)').get_attribute('class')
-  driver.back()
+  driver.back();

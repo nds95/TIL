@@ -30,7 +30,7 @@ for i in range(1, len(item_len)):
   print(get_url)
   time.sleep(2)
   item_click = driver.find_element_by_css_selector(f'#mArticle > main > div.list__ListWrap-uqwbkk-0.heFHpk > ul > li:nth-child({i}) > a').click()
-  time.sleep(3)
+  time.sleep(2)
   driver.get(get_url)
   full_html = driver.page_source
   soup = BeautifulSoup(full_html, 'html.parser')

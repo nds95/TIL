@@ -19,7 +19,7 @@ driver.get(crawling_url)
 #3. Parsing html code
 full_html = driver.page_source
 soup = BeautifulSoup(full_html, 'html.parser')
-time.sleep(3)
+time.sleep(2)
 # item 경로 click
 item_len = soup.select(f'#mArticle > main > div.list__ListWrap-uqwbkk-0.heFHpk > ul > li')
 time.sleep(2)

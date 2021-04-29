@@ -8,7 +8,7 @@
 ***
 <br>
 
-* Primary key
+* Primary key (PK)
 <br>
 특정 컬럼을 Primary key로 설정하면 Primary key와 같은 값이 있는 row가 추가되는 것을 <br>DBMS가 자동으로 막아준다.
 <br><br>

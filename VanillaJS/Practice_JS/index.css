@@ -41,3 +41,14 @@ body {
   z-index: -1;
   animation: fadeIn 0.5s linear;
 }
+
+.weather {
+  display: block;
+  font-size: 100px;
+  text-align: center;
+}
+
+.clock {
+  padding: 70px;
+  text-align: center;
+}

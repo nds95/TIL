@@ -7,7 +7,8 @@ body {
 }
 
 body {
-  color: #34495e;
+  color: white;
+  text-shadow: 1px 1px 8px #A9A9A9;
 }
 
 .clicked {
@@ -16,7 +17,8 @@ body {
 
 .form,
 .greetings {
-  display: none;
+  display: block;
+  text-align: center;
 }
 
 .showing {
@@ -44,11 +46,12 @@ body {
 
 .weather {
   display: block;
-  font-size: 100px;
+  font-size: 60px;
   text-align: center;
 }
 
 .clock {
+  font-size: 70px;
   padding: 70px;
   text-align: center;
 }

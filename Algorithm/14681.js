@@ -1,19 +1,29 @@
-const fs = require('fs');
-const inputData = fs.readFileSync('./inputData.txt').toString().split('\n').map(value => +value);
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-//console.log(inputData);
+const array = [];
+const onInput = (input) => array.push(Number(input));
 
-const [a,b] = inputData;
-if(a > 0){
-  if(b > 0){
-    console.log('1');
+const onClose = () => {
+  const [x, y] = array;
+
+  if(x > 0){
+    if(y > 0){
+      console.log('1');
+    } else {
+      console.log('4');
+    };
   } else {
-    console.log('4');
+    if(y < 0){
+      console.log('3');
+    } else {
+      console.log('2');
+    }
   };
-} else {
-  if(b < 0){
-    console.log('3');
-  } else {
-    console.log('2');
-  }
+  process.exit();
 };
+
+rl.on('line', onInput).on('close', onClose);

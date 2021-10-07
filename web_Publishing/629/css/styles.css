@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 992px;
+  font-family: "Helvetica";
+}
+
+/* navbar */
+
+#navbar {
+  height: 60px;
+  background-color: white;
+  padding: 0 30px;
+}
+
+#logo {
+  display: inline-block;
+  line-height: 60px;
+}
+
+#logo img {
+  height: 20px;
+}
+
+#navbar ul {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+#navbar ul li {
+  list-style-type: none;
+  float: left;
+  padding: 0 10px;
+}
+
+li .menu {
+  display: block;
+  line-height: 60px;
+  color: gray;
+  text-decoration: none;
+  font-family: Helvetica;
+}
+
+/* hero header */
+
+.heroheader {
+  background-image: url('../images/hero_header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 90%;
+  max-width: 900px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+/* products */
+
+.product {
+  text-align: center;
+}
+
+.product span {
+  display: inline-block;
+  margin: 60px 0;
+  font-family: Helvetica;
+  font-size: 24px;
+  color: #545454;
+  font-weight: bold;
+}
+
+.itemcontainer {
+}
+
+.product .item{
+  display: inline-block;
+  width: 225px;
+  margin: 0 10px 80px;
+  text-decoration: none;
+}
+
+.item .picture {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 225px;
+  height: 225px;
+}
+
+.itemcontainer p {
+  color: gray;
+  font-size: 16px;
+  font-family: Helvetica;
+}
+
+.sunglasses {
+  background-image: url('../images/sunglasses.jpg');
+}
+
+.tassel {
+  background-image: url('../images/tassel_loafer.jpg');
+}
+
+.beige {
+  background-image: url('../images/beige_bag.jpg');
+}
+
+.sneakers {
+  background-image: url('../images/sneakers.jpg');
+}
+
+.slippers{
+  background-image: url('../images/slippers.jpg');
+}
+
+.watch{
+  background-image: url('../images/wrist_watch.jpg');
+}
+
+/* footer */
+
+.footer {
+  text-align: center;
+  margin: 120px 0 80px;
+}
+
+.footer a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer a img {
+  height: 20px;
+}

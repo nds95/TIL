@@ -1,0 +1,40 @@
+input {
+    position: absolute; left: -1000%;
+}
+
+label {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background: #d3d3d3;
+    border-radius: 60px;
+    transition: background .4s;
+}
+
+label:after {
+    content: "";
+    position: absolute;
+    left: 7.5px;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background: #fff;
+    transform: translateY(-50%);
+    box-shadow: 1px 3px 4px rgba(0,0,0, .1);
+    transition: all .4s;
+}
+
+input:checked + label:after {
+    left: calc(100% - 52.5px);
+}
+
+input:checked + label {
+    background: #4fbe79;
+}
+
+label span {
+    display: none;
+}
+

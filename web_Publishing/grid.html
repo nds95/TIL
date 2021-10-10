@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            border-bottom: 1px solid black;
+            margin: 0;
+        }
+
+        h1 a {
+            text-decoration: none;
+            color: black;
+            font-family: Helvetica;
+        }
+
+        ol {
+            border-right: 1px solid black;
+            width: 100px;
+            margin: 0;
+            padding: 10px 0 20px 20px;
+        }
+
+        ol a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ol .saw {
+            color: gray;
+        }
+
+        #active {
+            color: red;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+        }
+
+        #article {
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+    <div class="grid">
+        <ol>
+            <li><a href="1.html" class="saw">HTML</a></li>
+            <li><a href="2.CSS" id="active" class="saw">CSS</a></li>
+            <li><a href="3.JavaScript" class="saw">JavaScript</a></li>
+        </ol>
+        <div id="article">
+            <h2>CSS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita ipsam dolores reiciendis dolore, nemo commodi, totam doloremque rerum voluptates nobis vel earum, quidem voluptate ducimus omnis aut illo? Reprehenderit, modi.</p>
+        </div>
+    </div>
+</body>
+</html>

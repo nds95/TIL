@@ -32,3 +32,16 @@ img {
 }
 ```
 * ol, ul의 class에만 적용되도록 선언
+
+### 작명 규칙을 잘못 관리한 사례
+* 의미를 파악할 수 없는 작명<br>
+    .bx { ... }<br>
+    .cnt { ... }<br>
+    .mt { ... }<br>
+<br>
+* 전역 공간을 선점한 흔한 이름<br>
+    .content { ... }<br>
+    .button { ... }<br>
+    .top { ... }<br>
+<br>
+## CSS selector<br>

@@ -1,9 +1,11 @@
 body {
-    background-color: #f5d3db;
+    background: linear-gradient(to bottom right, #f5d0d9, white);
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     font-size: 16px;
-    height: 500px;
+    height: 2000px;
+    font-family: 'Manrope', sans-serif;
 }
 
 /* navbar css */
@@ -11,12 +13,14 @@ body {
 #header-container {
     margin: 0;
     background-color: white;
+    width: 100%;
     height: 80px;
     text-align: center;
+    position: fixed;
 }
 
 #navbar {
-    width: 80%;
+    width: 60%;
     padding: 10px;
     display: inline-flex;
     justify-content: space-between;
@@ -54,6 +58,7 @@ body {
 }
 
 #navbar .navContainer .menu a:hover {
+    transition: background-color 0.3s;
     color: black;
 }
 
@@ -84,6 +89,7 @@ body {
 }
 
 #navbar .navContainer .login-button:hover {
+    transition: background-color 0.2s;
     background-color: #fd5c80;
 }
 
@@ -99,8 +105,11 @@ body {
 }
 
 .section-title {
-    display: inline-flex;
-    width: 80%;
+    text-align: left;
+    display: inline-block;
+    width: 60%;
+    margin-top: 70px;
+    border-bottom: 1px solid #dfcfd3;
 }
 
 .section-title h1 {
@@ -108,4 +117,71 @@ body {
     font-weight: 600;
     margin-bottom: 20px;
     display: block;
+}
+
+.section-title .search {
+    display: flex;
+}
+
+.section-title .search input {
+    padding-left: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #dfcfd3;
+    width: 100%;
+    font-size: 16px;
+}
+
+.section-title .search button {
+    flex-basis: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff3366;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.section-title .search button:hover {
+    transition: background-color 0.2s;
+    background-color: #fd5c80;
+}
+
+.section-title .search button img {
+    width: 45px;
+}
+
+.section-title .hashtag {
+    margin-bottom: 30px;
+}
+
+.section-title .hashtag .hashtag-items {
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dfcfd3;
+    margin: 17px 10px 0px 0px;
+    padding: 1px 10px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.section-title .hashtag .hashtag-items span {
+    color: #f94673;
+}
+
+.section-title .hashtag .hashtag-items p {
+    margin-left: 5px;
+}
+
+/* main */
+
+#main {
+    display: flex;
+}
+
+#main .servers {
+    border: 1px solid black;
 }

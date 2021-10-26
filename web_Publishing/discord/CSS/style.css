@@ -179,9 +179,35 @@ body {
 /* main */
 
 #main {
+    margin: 30px auto;
+    width: 60%;
     display: flex;
 }
 
 #main .servers {
-    border: 1px solid blue;
+    flex-basis: 60%;
+}
+
+#main .title {
+    display: flex;
+}
+
+.title a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: gray;
+}
+
+.title a:first-child {
+    color: black;
+    border-bottom: 1px solid #fd5c80;
+}
+
+.title h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#main .rising {
+    flex-basis: 40%;
 }

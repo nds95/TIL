@@ -114,7 +114,7 @@ body {
 
 .section-title h1 {
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 20px;
     display: block;
 }
@@ -185,29 +185,90 @@ body {
 }
 
 #main .servers {
-    flex-basis: 60%;
+    flex-basis: 65%;
 }
 
 #main .title {
     display: flex;
 }
 
-.title a {
+.servers .title a {
     margin-right: 30px;
     text-decoration: none;
     color: gray;
 }
 
-.title a:first-child {
+.servers .title a:first-child {
     color: black;
     border-bottom: 1px solid #fd5c80;
 }
 
 .title h2 {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 #main .rising {
-    flex-basis: 40%;
+    flex-basis: 35%;
+}
+
+.rising .title {
+
+}
+
+.rising a {
+    text-decoration: none;
+    color: black;
+    padding-top: 10px;
+}
+
+.rising a h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: normal;
+    margin: 0;
+}
+
+#main .toggle {
+    margin: 50px 0;
+    background-color: #d2c7ca;
+    border-radius: 30px;
+    width: 187px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.toggle__name {
+    width: 93.5px;
+    height: 38px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle__name:hover {
+    transition: ease 0.3s;
+    background-color: #bdb3b5;
+}
+
+.list__title h2 {
+    font-size: 32px;
+    letter-spacing: normal;
+    font-weight: 500;
+    line-height: 40px;
+    color: black;
+}
+
+.list__title h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.list__title h3 {
+    margin-top: 16px;
 }

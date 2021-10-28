@@ -185,6 +185,7 @@ body {
 
 #main .servers {
     flex-basis: 65%;
+    margin-right: 20px;
 }
 
 #main .title {
@@ -212,7 +213,7 @@ body {
 }
 
 .rising .title {
-
+    margin-bottom: 35px;
 }
 
 .rising a {
@@ -222,6 +223,7 @@ body {
 }
 
 .rising a h3 {
+    display: inline-block;
     font-size: 24px;
     font-weight: 500;
     line-height: 32px;
@@ -289,8 +291,8 @@ body {
 }
 
 .bots__items > .container {
-    display: flex;
-    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
     padding: 0 23px;
 }
 
@@ -306,7 +308,7 @@ body {
 .bots__items img {
     width: 95px;
     height: 95px;
-    border-radius: 15px;
+    border-radius: 95px;
 }
 
 .bots__items h3 {
@@ -314,7 +316,7 @@ body {
     font-weight: 500;
     letter-spacing: normal;
     line-height: 24px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 .items__container {
@@ -348,7 +350,7 @@ body {
     text-decoration: none;
 }
 
-.items__container button {
+.items__container .learn {
     padding: 10px;
     display: inline-block;
     width: 180px;
@@ -382,6 +384,7 @@ body {
     line-height: 16px;
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.6);
+    margin: 0;
 }
 
 .items__title .hashtag {
@@ -398,6 +401,175 @@ body {
     color: black;
 }
 
+.items__title .hashtag:hover {
+    background-color: #bababa;
+}
+
 .hashtag span {
     color: #ff3466;
+}
+
+.tag__container {
+    display: flex;
+    align-items: center;
+}
+
+.tag__container > div {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-right: 10px;
+}
+
+.tag__rate img {
+    width: 15px;
+    height: 15px;
+}
+
+.tag__userCount img {
+    width: 20px;
+    height: 20px;
+}
+
+.tag__userCount {
+    display: flex;
+    align-items: center;
+}
+
+.invite {
+    padding: 10px;
+    display: inline-block;
+    height: 40px;
+    border: none;
+    background-color: #d3d3d3;
+    font-size: 16px;
+    letter-spacing: normal;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+.invite:hover {
+    transition: ease 0.3s;
+    background-color: #bababa;
+}
+
+.vote {
+    width: 200px;
+    padding: 10px;
+    display: inline-block;
+    height: 40px;
+    border: none;
+    background-color: #d3d3d3;
+    font-size: 16px;
+    letter-spacing: normal;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.vote:hover {
+    transition: ease 0.3s;
+    background-color: #bababa;
+}
+
+.vote img {
+    width: 15px;
+    height: 7px;
+}
+
+.games {
+    display: flex;
+    margin-top: 15px;
+    border-bottom: 1px solid #dcdada;
+    padding-bottom: 18px;
+    justify-content: space-between;
+}
+
+.games > .helper {
+    width: 50px;
+}
+
+.games__title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    display: block;
+}
+
+.games > .container {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.games img {
+    border-radius: 5px;
+    width: 73px;
+    height: 96px;
+}
+
+.rising > .title img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.games__container {
+    display: flex;
+    align-items: center;
+}
+
+.games__container > div {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: normal;
+}
+
+.games__container img {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+}
+
+.games__container > p {
+    font-size: 25px;
+    margin: 0 15px;
+}
+
+.games__rate, .games__count {
+    display: flex;
+    align-items: center;
+}
+
+.games > .arrow {
+    display: flex;
+    align-items: center;
+}
+
+.games > .arrow img {
+    width: 15px;
+    height: 10px;
+} 
+
+.games > .arrow p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 25px;
+}
+
+.medal {
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 16px;
+    color: #686868;
+}
+
+#tags > .title img {
+    width: 20px;
+    height: 20px;
 }

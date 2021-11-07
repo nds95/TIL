@@ -1,0 +1,30 @@
+/* body secsion */
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+#main, #footer, #gnb{
+    margin: 0 auto;
+    width: 1344px;
+}
+
+/* header section */
+
+#main-header {
+    height: 90px;
+    width: 100%;
+    border: 1px solid green;
+}
+
+#gnb {
+    height: 100%;
+    background-color: greenyellow;
+}
+
+/* main section */
+
+#main {
+    border: 1px solid blue;
+}

@@ -1,11 +1,14 @@
 /* body secsion */
 
 body {
-    background-color: black;
+    background: linear-gradient(to bottom right, #f9d2d9, 35%, white);
+    background-repeat: no-repeat;
     margin: 0;
+    color: white;
 }
 
-#main, #footer, #gnb{
+#main, #footer, #gnb, #search {
+    display: block;
     margin: 0 auto;
     width: 1344px;
 }
@@ -15,20 +18,70 @@ body {
 #main-header {
     height: 90px;
     width: 100%;
-    border: 1px solid green;
 }
 
 #gnb {
+    color: black;
     height: 100%;
-    background-color: greenyellow;
+    display: flex;
+    justify-content: center;
+    flex-grow: 24.68%, 63.26%, 12.05%
+}
+
+#gnb img {
+    width: 35px;
+    height: 42px;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+.header__blank {
+    width: 100%;
+}
+
+.header__auth {
+}
+
+
+/* search section */
+
+#search {
+    padding: 40px 0 32px 0;
 }
 
 /* main section */
 
 #main {
     border: 1px solid blue;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5%;
 }
 
-@media screen (width < 760px) {
+.discord-bots {
+}
+
+.rising-games {
+}
+
+@media screen and (max-width: 1344px) {
+    #main, #footer, #gnb, #search {
+        margin: 0 auto;
+        width: 100%;
+    }
     
+}
+
+@media screen and (max-width: 760px) {
+    .rising-games {
+        display: none;
+    }
+
+    #main {
+        grid-template-columns: 1fr;
+    }
 }

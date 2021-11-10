@@ -5,17 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Discord</title>
 </head>
 <body>
     <header id="main-header">
         <nav id="gnb">
-            <div class="header__menu">
-                <a href="top.gg"><img src="images/discord-icon.png" alt="icon"></a>
-                <div class="header__menu--element"></div>
-            </div>
+            <ul class="header__menu">
+                <a href="top.gg" style="padding: 0;"><img src="images/discord-icon.png" alt="icon"></a>
+                <li><a href="">Explore</a></li>
+                <li><div class="header__menu--dropbox">Add</div></li>
+                <li><a href="">Advertise</a></li>
+                <li><a href="">···</a></li>
+            </ul>
             <div class="header__blank">header__blank</div>
-            <div class="header__auth">header__auth</div>
+            <div class="header__auth">
+                <div class="header__auth--user"><img src="images/user-icon.png" alt="user"></div>
+                <a class="header__auth--login">Login</a>
+            </div>
         </nav>
     </header>
     <section id="search">

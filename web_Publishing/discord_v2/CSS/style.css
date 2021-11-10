@@ -1,3 +1,9 @@
+/* color define */
+
+:root {
+    --pink-color: rgb(255, 51, 102);
+}
+
 /* body secsion */
 
 body {
@@ -5,6 +11,7 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     color: white;
+    font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 #main, #footer, #gnb, #search {
@@ -28,14 +35,53 @@ body {
     flex-grow: 24.68%, 63.26%, 12.05%
 }
 
-#gnb img {
+.header__menu img {
     width: 35px;
     height: 42px;
+}
+
+.header__menu img:hover {
+    transition: ease 0.2s;
+    width: 36px;
+    height: 43px;
 }
 
 .header__menu {
     display: flex;
     align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.header__menu > li {
+    margin-left: 16px;
+    list-style: none;
+}
+
+.header__menu a {
+    padding: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.header__menu > a:nth-child(2){
+    margin-left: 16px;
+}
+
+.header__menu--dropbox {
+    padding: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.header__menu a:hover, .header__menu--dropbox:hover {
+    color: black;
 }
 
 .header__blank {
@@ -43,8 +89,36 @@ body {
 }
 
 .header__auth {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
+.header__auth--user {
+    display: flex;
+    background-color: #dfd0d4;
+    border-radius: 24px;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.header__auth--user img {
+    width: 30px;
+    height: 30px;
+}
+
+.header__auth--login {
+    background-color: var(--pink-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+}
 
 /* search section */
 

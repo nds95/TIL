@@ -22,8 +22,8 @@ body {
 }
 
 #main, #gnb, #search {
-    display: block;
     margin: 0 auto;
+    display: block;
     max-width: 1344px;
 }
 
@@ -266,19 +266,29 @@ body {
     color: black;
 }
 
-.rising-games {
+.discord__filter {
+}
+
+.add {
+    color: black;
+}
+
+.add__join {
+    margin-bottom: 94px;
+}
+
+.add__join > a {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
 }
 
 @media screen and (max-width: 1344px) {
-    #main, #footer, #gnb, #search {
-        margin: 0 auto;
-    }
     
 }
 
 @media screen and (max-width: 1015px) {
     #main {
-        border: 1px solid blue;
         height: 500px;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -287,7 +297,7 @@ body {
 }
 
 @media screen and (max-width: 760px) {
-    .rising-games {
+    .add {
         display: none;
     }
 

@@ -9,29 +9,53 @@
     <title>Discord</title>
 </head>
 <body>
-    <header id="main-header">
-        <nav id="gnb">
-            <ul class="header__menu">
+    <div class="container">
+        <header id="main-header">
+            <nav id="gnb">
                 <a href="top.gg" style="padding: 0;"><img src="images/discord-icon.png" alt="icon"></a>
-                <li><a href="">Explore</a></li>
-                <li><div class="header__menu--dropbox">Add</div></li>
-                <li><a href="">Advertise</a></li>
-                <li><a href="">···</a></li>
-            </ul>
-            <div class="header__blank">header__blank</div>
-            <div class="header__auth">
-                <div class="header__auth--user"><img src="images/user-icon.png" alt="user"></div>
-                <a class="header__auth--login">Login</a>
+                <ul class="header__menu">
+                    <li><a href="">Explore</a></li>
+                    <li><div class="header__menu--dropbox">Add</div></li>
+                    <li><a href="">Advertise</a></li>
+                    <li><a href="">···</a></li>
+                </ul>
+                <div class="header__blank"></div>
+                <div class="header__auth">
+                    <div class="header__auth--user"><img src="images/user-icon.png" alt="user"></div>
+                    <a class="header__auth--login">Login</a>
+                    <button class="header__auth--button"><img src="images/hamburger.png" alt="hamburger"></button>
+                </div>
+            </nav>
+        </header>
+        <section id="search">
+            <h1 class="search--title">Explore millions of Discord Bots & Servers</h1>
+            <div class="search--container">
+                <input class="search--input" type="text" placeholder="Search for the top Servers, Bots in Discord...">
+                <button class="search--button"><img src="images/search.png" alt=""></button>
             </div>
-        </nav>
-    </header>
-    <section id="search">
-        <div class="search--title">Explore millions of Discord Bots & Servers</div>
-    </section>
-    <main id="main">
-        <div class="discord-bots">discord bots</div>
-        <div class="rising-games">rising games</div>
-    </main>
+            <div class="search__hash__container">
+                <a href="#" class="search--hash" style="margin: 0;"><span>#</span>Gaming</a>
+                <a href="#" class="search--hash"><span>#</span>Social</a>
+                <a href="#" class="search--hash"><span>#</span>Fun</a>
+                <a href="#" class="search--hash"><span>#</span>Anime</a>
+                <a href="#" class="search--hash"><span>#</span>Meme</a>
+                <a href="#" class="search--hash"><span>#</span>Music</a>
+                <a href="#" class="search--hash"><span>#</span>Roleplay</a>
+                <a href="#" class="search--hash"><span>#</span>Minecraft</a>
+                <a href="#" class="search--hash"><span>#</span>Giveaway</a>
+                <a href="#" class="search--hash"><span>#</span>Moderation</a>
+            </div>
+        </section>
+        <main id="main">
+            <div class="discord-bots">
+                <div class="discord__title">
+                    <a href="#">Discord Bots</a>
+                    <a href="#">Discord Servers</a>
+                </div>
+            </div>
+            <div class="rising-games">rising games</div>
+        </main>
+    </div>
     <script src="script/index.js"></script>
 </body>
 </html>

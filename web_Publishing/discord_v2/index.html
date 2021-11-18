@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="Chrome">
@@ -9,29 +9,29 @@
     <title>Discord</title>
 </head>
 <body>
+    <header id="main-header">
+        <nav id="gnb">
+            <a href="top.gg" style="padding: 0;"><img src="images/discord-icon.png" alt="icon"></a>
+            <ul class="header__menu">
+                <li><a href="">Explore</a></li>
+                <li><div class="header__menu--dropbox">Add</div></li>
+                <li><a href="">Advertise</a></li>
+                <li><a href="">···</a></li>
+            </ul>
+            <div class="header__blank"></div>
+            <div class="header__auth">
+                <div class="header__auth--user"><img src="images/user-icon.png" alt="user"></div>
+                <a class="header__auth--login">Login</a>
+                <button class="header__auth--button"><img src="images/hamburger.png" alt="hamburger"></button>
+            </div>
+        </nav>
+    </header>
     <div class="container">
-        <header id="main-header">
-            <nav id="gnb">
-                <a href="top.gg" style="padding: 0;"><img src="images/discord-icon.png" alt="icon"></a>
-                <ul class="header__menu">
-                    <li><a href="">Explore</a></li>
-                    <li><div class="header__menu--dropbox">Add</div></li>
-                    <li><a href="">Advertise</a></li>
-                    <li><a href="">···</a></li>
-                </ul>
-                <div class="header__blank"></div>
-                <div class="header__auth">
-                    <div class="header__auth--user"><img src="images/user-icon.png" alt="user"></div>
-                    <a class="header__auth--login">Login</a>
-                    <button class="header__auth--button"><img src="images/hamburger.png" alt="hamburger"></button>
-                </div>
-            </nav>
-        </header>
         <section id="search">
             <h1 class="search--title">Explore millions of Discord Bots & Servers</h1>
             <div class="search--container">
                 <input class="search--input" type="text" placeholder="Search for the top Servers, Bots in Discord...">
-                <button class="search--button"><img src="images/search.png" alt=""></button>
+                <button class="search--button"><svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-oe30j9" aria-hidden="true"><g opacity="0.2"><path d="M10.8745 18.75C15.2238 18.75 18.7495 15.2242 18.7495 10.875C18.7495 6.52576 15.2238 3 10.8745 3C6.52527 3 2.99951 6.52576 2.99951 10.875C2.99951 15.2242 6.52527 18.75 10.8745 18.75Z" fill="currentColor"></path></g><path d="M10.8745 18.75C15.2238 18.75 18.7495 15.2242 18.7495 10.875C18.7495 6.52576 15.2238 3 10.8745 3C6.52527 3 2.99951 6.52576 2.99951 10.875C2.99951 15.2242 6.52527 18.75 10.8745 18.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.4424 16.4438L20.9987 21.0002" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
             </div>
             <div class="search__hash__container">
                 <a href="#" class="search--hash" style="margin: 0;"><span>#</span>Gaming</a>
@@ -269,12 +269,53 @@
                             <rect x="2" y="13.5" width="21" height="7" rx="1.5" stroke="currentColor" fill="currentColor" fill-opacity="0.2"></rect>
                             <circle cx="5.5" cy="7" r="1" fill="currentColor"></circle>
                             <circle cx="5.5" cy="17" r="1" fill="currentColor"></circle>
-                        </svg> Add Doscord Servers
+                        </svg> Add Doscord Servers 
                     </div> 
-                <div class="add__bots">Add Discord Bot</div>
+                    <div class="add__servers--content">
+                        <div class="grid__container">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/679339772887433226/a_7baec8bacb28dc4d25ca943d33afdac7.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/844431675320565781/03012bf747412d06e690a19e070d2500.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/842851000887803954/bbbc33eb26fa1964577c97c807f3445a.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/445258529679343616/dc50377cbc3d5e17c6b14fdb2a7a75f5.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/859030124656721930/70833f501787576c89dbc709f79b96c8.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/846505161018703972/0b65b6e4bf15ea64fec2194e24d8b14b.png?size=64">
+                            <img alt="avatar" src="https://cdn.top.gg/web-assets/topgg-fallback.png">
+                            <img alt="avatar" src="https://cdn.top.gg/web-assets/topgg-fallback.png">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/844431675320565781/03012bf747412d06e690a19e070d2500.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/859030124656721930/70833f501787576c89dbc709f79b96c8.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/icons/679339772887433226/a_7baec8bacb28dc4d25ca943d33afdac7.png?size=64">
+                        </div>
+                    </div>
+                    <a class="add__servers--login" href="#">Login to add Server</a>
+                </div>
+                <div class="add__bots">
+                    <div class="add__bots--title">
+                        <svg viewBox="0 0 25 24" focusable="false" class="chakra-icon css-1s6ukfj"><g opacity="0.2"><rect x="5" y="4.5" width="15" height="10.5" rx="5.25" fill="currentColor"></rect></g><path d="M3.40552 20.2491C4.32761 18.6531 5.65347 17.3278 7.24991 16.4064C8.84635 15.485 10.6572 15 12.5004 15C14.3437 15 16.1544 15.4851 17.7509 16.4065C19.3473 17.3279 20.6731 18.6533 21.5952 20.2493" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><rect x="5.5" y="5" width="14" height="9.5" rx="2.5" stroke="currentColor" fill="currentColor" fill-opacity="0.33"></rect><path d="M14 4.5L15.5 1.5" stroke="currentColor" stroke-linecap="round"></path><path d="M11 4.5L9.5 1.5" stroke="currentColor" stroke-linecap="round"></path></svg>Add Discord Bot
+                    </div>
+                    <div class="add__servers--content">
+                        <div class="grid__container">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/839736739237330944/b97212f5ab7ff52936fba47db6b3be1b.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/543624467398524935/cc5644a732359da28b3defacd3e9b9a3.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/846499737242959962/75babad81947ab980e86a0109306f69f.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/890495595679195196/81b9662f6eed3308c384bcfa3900ea37.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/907821047070478347/58ab14f3c977e0dcc29f4dbbbcb11c58.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/898374041650487296/3783ee1f3198ee13af18255fdf46a266.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/839919247866331218/362031ab67ee8a669e1d7a12e464baf0.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/903377277876830278/226029587e524971c8112c654ad2bbfe.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/775002266171080724/1a201f3f1a826c9f931032dae4475f9d.png?size=64">
+                            <img alt="avatar" src="https://images.discordapp.net/avatars/839736739237330944/b97212f5ab7ff52936fba47db6b3be1b.png?size=64">
+                        </div>
+                    </div>
+                    <a class="add__servers--login" href="#">Login to add Bot</a>
+                </div>
             </section>
         </main>
     </div>
-    <script src="script/index.js"></script>
+    <script>
+        document.addEventListener('scroll', () => {
+            console.log(window.scrollY);
+        });
+    </script>
+    <script src="main.js"></script>
 </body>
 </html>

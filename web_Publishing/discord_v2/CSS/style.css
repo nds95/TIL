@@ -8,7 +8,6 @@
 
 html {
     height: 100%;
-    overflow: auto;
 }
 
 /* body secsion */
@@ -20,7 +19,7 @@ body {
     color: white;
     font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     overflow-wrap: break-word;
-    height: 100%;
+    min-height: 100%;
     overflow: auto;
 }
 
@@ -39,6 +38,8 @@ body {
 #main-header {
     height: 90px;
     width: 100%;
+    background-color: rgb(255, 255, 255, 1);
+    position: fixed;
 }
 
 #gnb {
@@ -46,6 +47,7 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
+    padding-right: 20px;
 }
 
 #gnb > a {
@@ -118,11 +120,7 @@ body {
     width: 40px;
     height: 40px;
     cursor: pointer;
-}
-
-.header__auth--user:hover {
-    transition: ease 0.3s;
-    background-color: #BFABB0;
+    background-color:rgba(0, 0, 0, 0.1);
 }
 
 .header__auth--user img {
@@ -138,6 +136,12 @@ body {
     font-size: 16px;
     font-weight: 600;
     padding: 8px 16px;
+    cursor: pointer;
+}
+
+.header__auth--login:hover {
+    background-color: var(--pink-hover-color);
+    transition: ease-in-out 0.2s;
 }
 
 .header__auth--button {
@@ -162,8 +166,8 @@ body {
     font-size: 40px;
     color: black;
     font-weight: 400;
-    margin: 0;
-    z-index: 7;
+    margin-top: 90px;
+    margin-bottom: 0;
 }
 
 .search--container {
@@ -181,7 +185,6 @@ body {
     font-size: 16px;
     cursor: text;
     font-weight: 500;
-
 }
 
 .search--button {
@@ -198,9 +201,14 @@ body {
     background-color: var(--pink-hover-color);
 }
 
-.search--button > img {
+.search--button > svg {
     width: 24px;
     height: 24px;
+}
+
+.search--hash:hover {
+    background-color:rgba(0, 0, 0, 0.1);
+    transition-duration: ease-in-out 0.3s;
 }
 
 .search__hash__container {
@@ -399,6 +407,11 @@ body {
     font-size: 13px;
 }
 
+.items__tags--tag:hover {
+    background-color:rgb(0, 0, 0, 0.1);
+    transition-duration: 0.3s;
+}
+
 .items__tags--tag > p {
     display: inline;
     color: var(--pink-color);
@@ -417,6 +430,12 @@ body {
     cursor: pointer;
     height: fit-content;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.items__learn:hover {
+    transition-duration: 0.3s;
+    background-color:rgb(0, 0, 0, 0.2);
 }
 
 .items__learn:first-child {
@@ -428,6 +447,7 @@ body {
     padding: 0;
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
 }
 
 .items__vote {
@@ -487,14 +507,83 @@ body {
     color: var(--pink-color);
 }
 
+.add__servers {
+    margin-bottom: 80px;
+}
+
 .add__servers--title {
     color: black;
+    font-size: 24px;
 }
 
 .add__servers svg {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     color: var(--pink-color);
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+.add__servers--content {
+    margin-top: 32px;
+    width: 100%;
+    height: 180px;
+    background-color: rgb(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.grid__container {
+    transform: rotate(20deg) translateX(-24px) translateY(-20px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 20px;
+    row-gap: 40px;
+    column-gap: 40px;
+}
+
+.grid__container img {
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.add__servers--login {
+    display: inline-flex;
+    border-radius: 10px;
+    background-color:rgb(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: black;
+    padding: 8px 16px;
+    justify-content: center;
+    width: 100%;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.add__servers--login:hover {
+    transition-duration: 0.2s;
+    background-color: #BDBABA;
+}
+
+.add__bots--title {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 16px;
+}
+
+.add__bots--title > svg {
+    width: 24px;
+    height: 24px;
+    color: var(--pink-color);
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-bottom: 2px;
 }
 
 @media screen and (max-width: 1015px) {

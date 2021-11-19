@@ -9,6 +9,7 @@
     <title>Discord</title>
 </head>
 <body>
+    <div class="opacity"></div>
     <header id="main-header">
         <nav id="gnb">
             <a href="top.gg" style="padding: 0;"><img src="images/discord-icon.png" alt="icon"></a>
@@ -18,9 +19,13 @@
                 <li><a href="">Advertise</a></li>
                 <li><a href="">···</a></li>
             </ul>
-            <div class="header__blank"></div>
+            <div class="header__search">
+                <input type="text" placeholder="Search fot the top Servers, Bots in Discord..." class="header__search--input">
+            </div>
             <div class="header__auth">
-                <div class="header__auth--user"><img src="images/user-icon.png" alt="user"></div>
+                <div class="header__auth--user">
+                    <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-7lr8wu" role="img" aria-label=" avatar"><path opacity="0.2" d="M12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15Z" fill="currentColor"></path><path d="M12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15Z" stroke="currentColor" stroke-miterlimit="10"></path><path d="M2.90527 20.2491C3.82736 18.6531 5.15322 17.3278 6.74966 16.4064C8.34611 15.485 10.1569 15 12.0002 15C13.8434 15 15.6542 15.4851 17.2506 16.4065C18.8471 17.3279 20.1729 18.6533 21.0949 20.2493" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </div>
                 <a class="header__auth--login">Login</a>
                 <button class="header__auth--button"><img src="images/hamburger.png" alt="hamburger"></button>
             </div>
@@ -311,11 +316,6 @@
             </section>
         </main>
     </div>
-    <script>
-        document.addEventListener('scroll', () => {
-            console.log(window.scrollY);
-        });
-    </script>
     <script src="main.js"></script>
 </body>
 </html>

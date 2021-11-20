@@ -19,6 +19,7 @@ document.addEventListener("scroll", () => {
         navbar.style.opacity = calcHeight(window.scrollY).toString();
     }
 }, true);
+
 //navbar search input display controll
 
 var navSearchInput = document.querySelector('.header__search > input');

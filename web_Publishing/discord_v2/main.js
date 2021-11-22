@@ -53,25 +53,29 @@ var topTitle = document.querySelector(`#main > section.discord-bots > div.bots__
 var topDesc = document.querySelector(`#main > section.discord-bots > div.bots__text > h2`);
 var topButton = document.querySelector('.discord__filter--top');
 var newButton = document.querySelector('.discord__filter--new');
+var toggleButton = document.querySelector('.discord-filter__toggle');
+
+document.addEventListener("DOMContentLoaded", () => {
+    topButton.click();
+})
 
 function showTop() {
-    topMenu.style.display = "grid";
-    newMenu.style.display = "none";
-    topTitle.innerText = "Top Bots";
-    topDesc.innerText = "Top voted bots on Top.gg";
-    topButton.style.background = "#FB567F";
-    newButton.style.background = "#D3CECF";
-    topButton.style.cursor = "normal";
+    toggleButton.classList.add("toggle--right");
+    toggleButton.classList.remove("toggle--left");
+    topButton.style.cursor = "default";
     newButton.style.cursor = "pointer";
+    document.addEventListener("onmouseover", () => {
+        newButton.style.background = "#BDBABA";
+    }, false)
 }
 
 function showNew() {
-    topMenu.style.display = "none";
-    newMenu.style.display = "grid";
-    topTitle.innerText = "New Bots";
-    topDesc.innerText = "New bots on Top.gg";
-    newButton.style.background = "#FB567F";
-    topButton.style.background = "#D3CECF";
+    toggleButton.classList.add('toggle--left');
+    toggleButton.classList.remove("toggle--right");
+    newButton.style.cursor = "default";
     topButton.style.cursor = "pointer";
-    newButton.style.cursor = "normal";
+    document.addEventListener("onmouseover", () => {
+        topButton.style.background = "#BDBABA";
+    }, false)
+
 }

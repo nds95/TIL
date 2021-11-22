@@ -44,3 +44,34 @@ document.addEventListener("scroll", () => {
         searchInput.classList.add('appear');
     }
 })
+
+//bots-items display control
+
+var topMenu = document.querySelector(`#main > section.discord-bots > article:nth-child(4)`);
+var newMenu = document.querySelector(`#main > section.discord-bots > article:nth-child(5)`);
+var topTitle = document.querySelector(`#main > section.discord-bots > div.bots__text > a`);
+var topDesc = document.querySelector(`#main > section.discord-bots > div.bots__text > h2`);
+var topButton = document.querySelector('.discord__filter--top');
+var newButton = document.querySelector('.discord__filter--new');
+
+function showTop() {
+    topMenu.style.display = "grid";
+    newMenu.style.display = "none";
+    topTitle.innerText = "Top Bots";
+    topDesc.innerText = "Top voted bots on Top.gg";
+    topButton.style.background = "#FB567F";
+    newButton.style.background = "#D3CECF";
+    topButton.style.cursor = "normal";
+    newButton.style.cursor = "pointer";
+}
+
+function showNew() {
+    topMenu.style.display = "none";
+    newMenu.style.display = "grid";
+    topTitle.innerText = "New Bots";
+    topDesc.innerText = "New bots on Top.gg";
+    newButton.style.background = "#FB567F";
+    topButton.style.background = "#D3CECF";
+    topButton.style.cursor = "pointer";
+    newButton.style.cursor = "normal";
+}

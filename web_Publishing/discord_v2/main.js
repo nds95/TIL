@@ -62,20 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function showTop() {
     toggleButton.classList.add("toggle--right");
     toggleButton.classList.remove("toggle--left");
-    topButton.style.cursor = "default";
-    newButton.style.cursor = "pointer";
-    document.addEventListener("onmouseover", () => {
-        newButton.style.backgroundColor = "red";
-    }, false)
-}
+    newButton.classList.add("discord__filter--new-hover");
+    topButton.classList.remove("discord__filter--top-hover");
+};
 
 function showNew() {
     toggleButton.classList.add('toggle--left');
     toggleButton.classList.remove("toggle--right");
-    newButton.style.cursor = "default";
-    topButton.style.cursor = "pointer";
-    document.addEventListener("onmouseover", () => {
-        topButton.style.backgroundColor = "red";
-    }, false)
-
-}
+    topButton.classList.add("discord__filter--top-hover");
+    newButton.classList.remove("discord__filter--new-hover");
+};

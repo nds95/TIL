@@ -65,7 +65,7 @@ function showTop() {
     topButton.style.cursor = "default";
     newButton.style.cursor = "pointer";
     document.addEventListener("onmouseover", () => {
-        newButton.style.background = "#BDBABA";
+        newButton.style.backgroundColor = "red";
     }, false)
 }
 
@@ -75,7 +75,7 @@ function showNew() {
     newButton.style.cursor = "default";
     topButton.style.cursor = "pointer";
     document.addEventListener("onmouseover", () => {
-        topButton.style.background = "#BDBABA";
+        topButton.style.backgroundColor = "red";
     }, false)
 
 }

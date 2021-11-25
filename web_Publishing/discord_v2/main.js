@@ -87,11 +87,6 @@ var discordBorder = document.querySelector(`.discord-title__border`);
 
 var botsContent = document.querySelector('.bots-content');
 
-botsContent.addEventListener('click', (e) => {
-    const filter = e.target.dataset.filter;
-    console.log(filter);
-})
-
 // discordServers.addEventListener("click", () => {
 //     discordBorder.style.width = "139px";
 //     discordBorder.style.transform = "translateX(145px)";

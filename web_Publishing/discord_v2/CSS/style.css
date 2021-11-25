@@ -329,6 +329,7 @@ body {
     color: var(--gray-color);
     font-size: 20px;
     cursor: pointer;
+    position: static;
 }
 
 .discord-title--onclick {
@@ -337,7 +338,16 @@ body {
     color: black;
     font-size: 20px;
     cursor: pointer;
-    border-bottom: 1px solid var(--pink-hover-color);
+}
+
+.discord-title__border {
+    width: 112px;
+    height: 1px;
+    background-color: var(--pink-hover-color);
+    position: relative;
+    right: 315px;
+    top: 50px;
+    transition: .3s;
 }
 
 .discord__title > a:hover {
@@ -412,6 +422,10 @@ body {
     display: grid;
     gap: 1px;
     margin-top: 32px;
+}
+
+article:nth-child(5) {
+    display: none;
 }
 
 .bots__items {

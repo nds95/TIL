@@ -60,6 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function showTop() {
+    topTitle.innerText = "Top Bots";
+    topDesc.innerText = "Top voted bots on Top.gg";
     toggleButton.classList.add("toggle--right");
     toggleButton.classList.remove("toggle--left");
     newButton.classList.add("discord__filter--new-hover");
@@ -67,8 +69,41 @@ function showTop() {
 };
 
 function showNew() {
+    topTitle.innerText = "New Bots";
+    topDesc.innerText = "New bots on Top.gg";
     toggleButton.classList.add('toggle--left');
     toggleButton.classList.remove("toggle--right");
     topButton.classList.add("discord__filter--top-hover");
     newButton.classList.remove("discord__filter--new-hover");
 };
+
+//discord-title click event
+
+var discordBots = document.querySelector(`#main > section.discord-bots > div.discord__title > a:nth-child(1)`);
+var discordServers = document.querySelector(`#main > section.discord-bots > div.discord__title > a:nth-child(2)`);
+var discordBorder = document.querySelector(`.discord-title__border`);
+// var botsContent = document.querySelector(`#main > section.discord-bots > article:nth-child(4)`);
+// var serversContent = document.querySelector(`#main > section.discord-bots > article:nth-child(5)`);
+
+var botsContent = document.querySelector('.bots-content');
+
+botsContent.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter;
+    console.log(filter);
+})
+
+// discordServers.addEventListener("click", () => {
+//     discordBorder.style.width = "139px";
+//     discordBorder.style.transform = "translateX(145px)";
+//     serversContent.style.display = "grid";
+//     botsContent.style.display = "none";
+// })
+
+// discordBots.addEventListener("click", () => {
+//     discordBorder.style.width = "112px";
+//     discordBorder.style.transform = "translateX(0px)";
+//     botsContent.style.display = "grid";
+//     serversContent.style.display = "none";
+// })
+
+//bots, servers content view

@@ -54,6 +54,8 @@ var topDesc = document.querySelector(`#main > section.discord-bots > div.bots__t
 var topButton = document.querySelector('.discord__filter--top');
 var newButton = document.querySelector('.discord__filter--new');
 var toggleButton = document.querySelector('.discord-filter__toggle');
+var topContent = document.querySelector('article:nth-child(4)');
+var newContent = document.querySelector('article:nth-child(5)');
 
 document.addEventListener("DOMContentLoaded", () => {
     topButton.click();
@@ -66,6 +68,8 @@ function showTop() {
     toggleButton.classList.remove("toggle--left");
     newButton.classList.add("discord__filter--new-hover");
     topButton.classList.remove("discord__filter--top-hover");
+    newContent.style.display = "none";
+    topContent.style.display = "grid";
 };
 
 function showNew() {
@@ -75,6 +79,8 @@ function showNew() {
     toggleButton.classList.remove("toggle--right");
     topButton.classList.add("discord__filter--top-hover");
     newButton.classList.remove("discord__filter--new-hover");
+    newContent.style.display = "grid";
+    topContent.style.display = "none";
 };
 
 //discord-title click event

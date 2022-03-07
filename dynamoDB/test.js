@@ -13,7 +13,15 @@ const params = {
   }
 };
 
-docClient.put(params, (err, data) => {
+const query = {
+  TableName: config.aws_table_name,
+}
+
+const scan = {
+  TableName: config.aws_table_name
+}
+
+docClient.scan(scan, (err, data) => {
   if ( err ) {
     console.log(err);
   } else {
